@@ -5,11 +5,15 @@ APP_ID = -1  # чтобы получить app_id, нужно зарегистр
 
 
 def get_user_login():
-    pass
+    print('Enter your vk login:')
+    login = input()
+    return login
 
 
 def get_user_password():
-    pass
+    print('Enter your vk password:')
+    password = input()
+    return password
 
 
 def get_online_friends(login, password):
@@ -19,11 +23,13 @@ def get_online_friends(login, password):
         user_password=password,
     )
     api = vk.API(session)
-    # например, api.friends.get()
+    list_online = api.friends.get(fields=['nickname'])
+    return filter(lambda x: x.get('online'), list_online)
 
 
 def output_friends_to_console(friends_online):
-    pass
+    for friend in friends_online:
+        print('{0} {1}'.format(friend.get('first_name', ''), friend.get('last_name')))
 
 if __name__ == '__main__':
     login = get_user_login()
