@@ -1,7 +1,8 @@
 # Watcher of Friends Online
 
-[TODO. There will be project description]
+Show your online friends in VK social network.
 
-# Project Goals
-
-The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)
+Usage:
+```
+python vk_friends_online.py
+```
