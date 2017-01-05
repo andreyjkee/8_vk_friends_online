@@ -5,14 +5,12 @@ APP_ID = -1
 
 
 def get_user_login():
-    print('Enter your vk login:')
-    login = input()
+    login = input('Enter your vk login:')
     return login
 
 
 def get_user_password():
-    print('Enter your vk password:')
-    password = getpass.getpass()
+    password = getpass.getpass('Enter your vk password:')
     return password
 
 
