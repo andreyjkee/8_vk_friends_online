@@ -23,6 +23,8 @@ def get_online_friends(login, password):
     )
     api = vk.API(session)
     list_online = api.friends.getOnline()
+    if not list_online:
+        return None
     return api.users.get(user_ids=list_online, fields=['last_name', 'first_name'])
 
 
